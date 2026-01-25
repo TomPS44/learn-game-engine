@@ -1,11 +1,14 @@
 #include <iostream>
-#include <Vector2.hpp>
+#include "Math.hpp"
 
 int main()
 {
-    std::cout << "C'est trop bien, Git !" << std::endl;
+    std::cout << (Angle::Lerp(10.0f, 20.0f, 0.5f)).AsDegrees() << std::endl;
 
-    Vector2 vec = {2.0f, 3.0f};
+
 
     return 0;
 }
+
+
+// super cool namespace color : #E6DD9A
