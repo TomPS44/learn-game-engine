@@ -18,63 +18,63 @@ namespace Mathematics
 
         // Methods to clamp a float or an Angle between two numbers
 
-        inline float Clamp(float value, float minInclusive, float maxInclusive) { return MathInternal::Clamp(value, minInclusive, maxInclusive); }
+        inline float clamp(float value, float minInclusive, float maxInclusive) { return MathInternal::clamp(value, minInclusive, maxInclusive); }
         
-        inline float Clamp01(float value) { return MathInternal::Clamp01(value); }
+        inline float clamp01(float value) { return MathInternal::clamp01(value); }
 
-        inline Angle ClampAngle(const Angle& angle, float minDegrees, float maxDegrees)
+        inline angle clampAngle(const angle& angle, float minDegrees, float maxDegrees)
         {
-            return Angle::FromDegrees(MathInternal::Clamp(angle.AsDegrees(), minDegrees, maxDegrees));
+            return angle::fromDegrees(MathInternal::clamp(angle.asDegrees(), minDegrees, maxDegrees));
         }
 
         // Simple Absolute Value and Square Root methods, with floats and Angles
         
-        inline float Abs(float value) { return MathInternal::Abs(value); }
-        inline float Abs(const Angle& angle) { return MathInternal::Abs(angle.AsRadians()); }
-        inline float Sqrt(float value) { return MathInternal::Sqrt(value); }
+        inline float abs(float value) { return MathInternal::abs(value); }
+        inline float abs(const angle& angle) { return MathInternal::abs(angle.asRadians()); }
+        inline float sqrt(float value) { return MathInternal::sqrt(value); }
         
 
         // All the trigonometry stuff with floats, and Angles, returning floats and Angles
 
-        inline float Sin(float value) { return MathInternal::Sin(value); }
-        inline float Cos(float value) { return MathInternal::Cos(value); }
-        inline float Tan(float value) { return MathInternal::Tan(value); }
+        inline float sin(float value) { return MathInternal::sin(value); }
+        inline float cos(float value) { return MathInternal::cos(value); }
+        inline float tan(float value) { return MathInternal::tan(value); }
 
-        inline float Sin(const Angle& angle) { return MathInternal::Sin(angle.AsRadians()); }
-        inline float Cos(const Angle& angle) { return MathInternal::Cos(angle.AsRadians()); }
-        inline float Tan(const Angle& angle) { return MathInternal::Tan(angle.AsRadians()); }
+        inline float sin(const angle& angle) { return MathInternal::sin(angle.asRadians()); }
+        inline float cos(const angle& angle) { return MathInternal::cos(angle.asRadians()); }
+        inline float tan(const angle& angle) { return MathInternal::tan(angle.asRadians()); }
 
-        inline float Asin(float value) { return MathInternal::Asin(value); }
-        inline float Acos(float value) { return MathInternal::Acos(value); }
-        inline float Atan(float value) { return MathInternal::Atan(value); }
-        inline float Atan2(float y, float x) { return MathInternal::Atan2(y, x); }
+        inline float asin(float value) { return MathInternal::asin(value); }
+        inline float acos(float value) { return MathInternal::acos(value); }
+        inline float atan(float value) { return MathInternal::atan(value); }
+        inline float atan2(float y, float x) { return MathInternal::atan2(y, x); }
 
-        inline Angle AsinAngle(float value) { return Angle::FromRadians(MathInternal::Asin(value)); }
-        inline Angle AcosAngle(float value) { return Angle::FromRadians(MathInternal::Acos(value)); }
-        inline Angle AtanAngle(float value) { return Angle::FromRadians(MathInternal::Atan(value)); }
-        inline Angle Atan2Angle(float y, float x) { return Angle::FromRadians(MathInternal::Atan2(y, x)); }
+        inline angle asinAngle(float value) { return angle::fromRadians(MathInternal::asin(value)); }
+        inline angle acosAngle(float value) { return angle::fromRadians(MathInternal::acos(value)); }
+        inline angle atanAngle(float value) { return angle::fromRadians(MathInternal::atan(value)); }
+        inline angle atan2Angle(float y, float x) { return angle::fromRadians(MathInternal::atan2(y, x)); }
 
         // Just a Lerp method, which will be defined in each struct Vec, Angle... seperatly
 
-        inline float Lerp(float start, float end, float t) { return MathInternal::Lerp(start, end, t); }
+        inline float lerp(float start, float end, float t) { return MathInternal::lerp(start, end, t); }
 
-        inline float Mod(float value, float modulus) { return MathInternal::Mod(value, modulus); }
+        inline float mod(float value, float modulus) { return MathInternal::mod(value, modulus); }
 
-        inline float Pow(float value, float exponent) { return MathInternal::Pow(value, exponent); }
+        inline float pow(float value, float exponent) { return MathInternal::pow(value, exponent); }
 
 
         // Min and Max methods, taking two or an infinite number of arguments 
 
         template<typename T>
-        T Max(T a, T b) { return MathInternal::Max(a, b); }
+        T max(T a, T b) { return MathInternal::max(a, b); }
 
         template<typename T>
-        T Min(T a, T b) { return MathInternal::Min(a, b); }
+        T min(T a, T b) { return MathInternal::min(a, b); }
 
         template<typename T, typename... Args>
-        T Max(T first, Args... args) { return MathInternal::Max(first, args...); }
+        T max(T first, Args... args) { return MathInternal::max(first, args...); }
 
         template<typename T, typename... Args>
-        T Min(T first, Args... args) { return MathInternal::Min(first, args...); }
+        T min(T first, Args... args) { return MathInternal::min(first, args...); }
     }
 }

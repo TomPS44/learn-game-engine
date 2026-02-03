@@ -5,78 +5,79 @@
 
 namespace Mathematics
 {
+    // TODO: change all the functions case to camleCase instead of PascalCase
+
     namespace MathInternal
     {
         // Min and Max methods, taking two or an infinite number of arguments 
 
         template<typename T>
-        T Max(T a, T b) 
+        T max(T a, T b) 
         {
             return a > b ? a : b;
         }
         template<typename T>
-        T Min(T a, T b) 
+        T min(T a, T b) 
         {
             return a < b ? a : b;
         }
 
         template<typename T, typename... Args>
-        T Max(T first, Args... args) 
+        T max(T first, Args... args) 
         {
             T result = first;
-            ((result = Max(result, args)), ...); 
+            ((result = max(result, args)), ...); 
             return result;
         }
         template<typename T, typename... Args>
-        T Min(T first, Args... args) 
+        T mMin(T first, Args... args) 
         {
             T result = first;
-            ((result = Min(result, args)), ...); 
+            ((result = min(result, args)), ...); 
             return result;
         }
 
         // Methods to clamp a float or an Angle between two numbers
 
-        inline float Clamp(float value, float minInclusive, float maxInclusive)
+        inline float clamp(float value, float minInclusive, float maxInclusive)
         {
             // si value = 25, min = 10, et max = 20, Max(10, Min(25, 20)) -> Max(10, 20) -> 20, et c'est bon :) !
-            return Max(minInclusive, Min(value, maxInclusive));
+            return max(minInclusive, min(value, maxInclusive));
         }
-        inline float Clamp01(float value)
+        inline float clamp01(float value)
         {
-            return Clamp(value, 0.0f, 1.0f);
+            return clamp(value, 0.0f, 1.0f);
         }
 
         // Simple Absolute Value and Square Root methods, with floats and Angles
         
-        inline float Abs(float value) { return std::abs(value); }
-        inline float Sqrt(float value) { return std::sqrtf(value); }
+        inline float abs(float value) { return std::abs(value); }
+        inline float sqrt(float value) { return std::sqrtf(value); }
         
         // All the trigonometry stuff with floats, and Angles, returning floats and Angles
 
-        inline float Sin(float value) { return std::sinf(value); }
-        inline float Cos(float value) { return std::cosf(value); }
-        inline float Tan(float value) { return std::tanf(value); }
+        inline float sin(float value) { return std::sinf(value); }
+        inline float cos(float value) { return std::cosf(value); }
+        inline float tan(float value) { return std::tanf(value); }
 
-        inline float Asin(float value) { return std::asinf(value); }
-        inline float Acos(float value) { return std::acosf(value); }
-        inline float Atan(float value) { return std::atanf(value); }
-        inline float Atan2(float y, float x) { return std::atan2f(y, x); }
+        inline float asin(float value) { return std::asinf(value); }
+        inline float acos(float value) { return std::acosf(value); }
+        inline float atan(float value) { return std::atanf(value); }
+        inline float atan2(float y, float x) { return std::atan2f(y, x); }
 
         // Just a Lerp method, which will be defined in each struct Vec, Angle... seperatly
 
-        inline float Lerp(float start, float end, float t)
+        inline float lerp(float start, float end, float t)
         {
-            t = Clamp01(t);
-            return start + t * (end - start);
+            return start + (end - start) * clamp01(t);
         }
 
-        inline float Mod(float value, float modulus)
+        inline float mod(float value, float modulus)
         {
             return std::fmodf(value, modulus);
         }
 
-        inline float Pow(float value, float exponent)
+        inline float pow(float value, float exponent)
         {
             return std::powf(value, exponent);
         }
