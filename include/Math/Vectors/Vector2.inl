@@ -1,6 +1,9 @@
 #include <concepts>
 #include <cmath>
 
+#include "Math\Concepts.hpp"
+#include "Math\MathInternal.hpp"
+
 
 namespace math
 {

@@ -56,7 +56,7 @@ namespace math
     template<Number N>
     inline N abs(N value) { return std::abs(value); }
     template<std::floating_point F>
-    inline F sqrt(float value) { return static_cast<F>(std::sqrt(value)); }
+    inline F sqrt(F value) { return static_cast<F>(std::sqrt(value)); }
     
     // All the trigonometry stuff with floats, and Angles, returning floats and Angles
 

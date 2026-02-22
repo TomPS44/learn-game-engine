@@ -1,8 +1,6 @@
 #pragma once 
 
-#include <cmath>
-
-
+#include "Math\Concepts.hpp"
 
 namespace math
 {
@@ -118,7 +116,7 @@ namespace math
         
         vec3& normalized();
 
-        template<std::floating_point type>
+        template<std::floating_point type = F>
         vec3<type> getUnitVector() const;
 
         template<std::floating_point f>
@@ -150,4 +148,4 @@ namespace math
     inline bool operator!=(const vec3<F>& a, const vec3<F>& b);
 }
 
-#include "Math\Vector3.inl"
+#include "Math\Vectors\Vector3.inl"

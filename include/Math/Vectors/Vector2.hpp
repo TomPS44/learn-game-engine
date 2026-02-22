@@ -1,8 +1,6 @@
 #pragma once
 
-#include <cmath>
-
-#include "Math\MathInternal.hpp"
+#include "Math\Concepts.hpp"
 
 namespace math
 {
@@ -132,4 +130,4 @@ namespace math
     inline bool operator!=(const vec2<F>& a, const vec2<F>& b);
 }
 
-#include "Math\Vector2.inl"
+#include "Math\Vectors\Vector2.inl"

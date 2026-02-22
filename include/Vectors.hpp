@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Math\Vector2.hpp"
-#include "Math\Vector3.hpp"
+#include "Math\Vectors\Vector2.hpp"
+#include "Math\Vectors\Vector3.hpp"
 
 using namespace math;
 
